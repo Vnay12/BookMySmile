@@ -18,14 +18,14 @@ const Home = ({ searchParams }: SearchParamProps) => {
             height={1000}
             width={1000}
             alt="patient"
-            className=" w-[200px] h-auto mb-2 ml-40"
+            className=" w-[200px] h-auto mb-10 -mt-4"
           />
 
           <PatientForm />
 
           <div className="text-14-regular mt-20 flex justify-between">
             <p className="justify-items-end text-dark-600 xl:text-left">
-              © 2025 BookMySmile
+              © 2025 BOOKMYSMILE
             </p>
             <Link href="/?admin=true" className="text-green-500">
               Admin

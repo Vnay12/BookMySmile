@@ -47,7 +47,7 @@ export const Doctors = [
   },
   {
     image: "/assets/images/dr-cameron.png",
-    name: "Dr. xyz",
+    name: "Dr. Vinay Naik",
   },
   /* {
     image: "/assets/images/dr-livingston.png",

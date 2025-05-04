@@ -15,7 +15,7 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
             height={1000}
             width={1000}
             alt="logo"
-            className="mb-0 h-[250px] w-fit ml-80"
+            className="mb-10 h-[60px] w-fit"
           />
 
           <AppointmentForm

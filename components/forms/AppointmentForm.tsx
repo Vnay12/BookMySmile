@@ -21,6 +21,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import CustomFormField, { FormFieldType } from "../CustomFormField";
 import SubmitButton from "../SubmitButton";
 import { Form } from "../ui/form";
+import { log } from "console";
 
 export const AppointmentForm = ({
   userId,
@@ -43,7 +44,7 @@ export const AppointmentForm = ({
   const form = useForm<z.infer<typeof AppointmentFormValidation>>({
     resolver: zodResolver(AppointmentFormValidation),
     defaultValues: {
-      primaryPhysician: appointment ? appointment?.primaryPhysician : "",
+      primaryPhysician: appointment ? appointment.primaryPhysician : "",
       schedule: appointment
         ? new Date(appointment?.schedule!)
         : new Date(Date.now()),
@@ -51,6 +52,13 @@ export const AppointmentForm = ({
       note: appointment?.note || "",
       cancellationReason: appointment?.cancellationReason || "",
     },
+  });
+
+  console.log({
+    userId,
+    patientId,
+    type,
+    appointment,
   });
 
   const onSubmit = async (
@@ -101,6 +109,7 @@ export const AppointmentForm = ({
             cancellationReason: values.cancellationReason,
           },
           type,
+          timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone, // Add the timeZone property
         };
 
         const updatedAppointment = await updateAppointment(appointmentToUpdate);
